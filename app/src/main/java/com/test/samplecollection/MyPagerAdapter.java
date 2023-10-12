@@ -31,6 +31,8 @@ public class MyPagerAdapter extends FragmentStateAdapter {
         }
     }
 
+
+
     @Override
     public int getItemCount() {
         return NUM_PAGES;
