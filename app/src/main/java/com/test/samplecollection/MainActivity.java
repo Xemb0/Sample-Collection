@@ -1,20 +1,18 @@
 package com.test.samplecollection;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
+
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
-import com.etebarian.meowbottomnavigation.MeowBottomNavigation.Model;
 import com.test.samplecollection.HomeFragment;
 import com.test.samplecollection.MyPagerAdapter;
-import com.test.samplecollection.R;
 import com.test.samplecollection.SearchFragment;
 import com.test.samplecollection.UserFragment;
 
 public class MainActivity extends AppCompatActivity {
-
     private ViewPager2 viewPager;
     private MeowBottomNavigation bottomNavigation;
 
@@ -50,16 +48,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupBottomNavigation() {
-        bottomNavigation.add(new Model(0, R.drawable.ic_search_nav));
-        bottomNavigation.add(new Model(1, R.drawable.ic_home_nav));
-        bottomNavigation.add(new Model(2, R.drawable.ic_user_nav));
+        bottomNavigation.add(new MeowBottomNavigation.Model(0, R.drawable.ic_search_nav));
+        bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home_nav));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_user_nav));
 
         // Set the initial tab
         viewPager.setCurrentItem(1, false);
 
         bottomNavigation.setOnClickMenuListener(model -> {
             // Handle tab selection
-            viewPager.setCurrentItem(model.getId() , false);
+            viewPager.setCurrentItem(model.getId(), false);
             return null;
         });
     }
